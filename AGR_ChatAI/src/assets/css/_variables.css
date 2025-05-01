@@ -1,0 +1,27 @@
+/* src/assets/css/_variables.css */
+:root {
+    /* Colors */
+    --color-primary:   #1a73e8;
+    --color-secondary: #ffca28;
+    --color-bg:        #f5f5f5;
+    --color-text:      #333;
+  
+    /* Typography */
+    --font-family-base: 'Roboto', sans-serif;
+    --font-size-base:   16px;
+    --line-height-base: 1.5;
+  
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md:16px;
+    --spacing-lg:24px;
+    --spacing-xl:32px;
+  
+    /* Breakpoints */
+    --bp-sm: 576px;
+    --bp-md: 768px;
+    --bp-lg: 992px;
+    --bp-xl: 1200px;
+  }
+  
