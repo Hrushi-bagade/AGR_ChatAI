@@ -1,5 +1,5 @@
 import { Edit2, Info, ThumbsUp, Copy, Share2, MoreVertical, RefreshCw, Send, HelpCircle } from "react-feather"
-
+import '../styles/ChatArea.css'
 const ChatArea = () => {
   // Dummy chat data
   const chatData = [
@@ -40,15 +40,15 @@ These are just the basic steps to get started with a GPT chatbot in Python. Depe
 
   return (
     <div className="content">
-      <div className="chat-header">
-        <div className="chat-title">
+      {/* <div className="chat-header"> */}
+        {/* <div className="chat-title">
           <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User avatar" />
           <h2>Create a chatbot gpt using python language what will be step for that</h2>
-        </div>
-        <div className="chat-actions">
-          <Edit2 size={18} />
-        </div>
-      </div>
+        </div> */}
+        {/* <div className="chat-actions"> */}
+          {/* <Edit2 size={18} /> */}
+        {/* </div> */}
+      {/* </div> */}
 
       <div className="chat-messages">
         {chatData.map((message) => (
