@@ -12,6 +12,20 @@ html, body, #root {
   color: var(--color-text);
 }
 
+.app-main {
+  flex: 1;                  /* Take up remaining space */ 
+  overflow-y: auto;         /* Scroll content if it overflows vertically */ 
+  margin-left: 20px;        /* Optional gutter between sidebar and main */
+  padding: 20px;
+  background-color: var(--color-bg);
+}
+
+.app-layout {
+  display: flex;            /* Enable flex layout */
+  height: 100vh;            /* Full viewport height */
+  padding: 20px;            /* Replace sidebar margin-top */ 
+  box-sizing: border-box;   /* Include padding in height calculations */
+}
 /* Box-sizing for predictable layouts */
 *, *::before, *::after {
   box-sizing: border-box;
