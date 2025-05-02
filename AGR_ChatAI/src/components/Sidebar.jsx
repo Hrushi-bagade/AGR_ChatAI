@@ -112,7 +112,7 @@ const Sidebar = () => {
       </div>
 
       <div className="conversations-header">
-        <span>Your conversations</span>
+        <span >Your conversations</span>
         <button className="clear-all-btn">Clear All</button>
       </div>
 

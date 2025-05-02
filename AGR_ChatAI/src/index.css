@@ -26,6 +26,32 @@ html, body, #root {
   padding: 20px;            /* Replace sidebar margin-top */ 
   box-sizing: border-box;   /* Include padding in height calculations */
 }
+
+/* 4. Upgrade tab */
+.upgrade-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background-color: #6366f1;
+  color: #fff;
+  padding: 10px 16px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: -2px 2px 8px rgba(0,0,0,0.1);
+  
+  /* Vertical text */
+  writing-mode: vertical-rl;
+  /* text-orientation: upright; */
+}
+.upgrade-tab:hover {
+  background-color: #4f46e5;
+  transition: background-color 0.2s ease-in-out;
+}
+
 /* Box-sizing for predictable layouts */
 *, *::before, *::after {
   box-sizing: border-box;

@@ -37,6 +37,7 @@
   display: flex;
   gap: 8px;
   margin-bottom: 15px;
+  margin-top: 30px;
 }
 
 .new-chat-btn {
@@ -79,6 +80,7 @@
 }
 
 .conversations-header {
+  border-top: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -8,6 +8,10 @@ const MainLayout = () => (
     <main className="app-main">
       <Outlet />
     </main>
+     {/* NEW: Upgrade-to-Pro Tab */}
+     <div className="upgrade-tab">
+      Upgrade to Pro
+    </div>
   </div>
   </>
 );
