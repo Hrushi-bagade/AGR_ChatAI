@@ -51,6 +51,63 @@ html, body, #root {
   background-color: #4f46e5;
   transition: background-color 0.2s ease-in-out;
 }
+.signup-section {
+  width: 100%;
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-title-container {
+  margin-bottom: 32px;
+}
+
+.chat-title {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.chat-interface-container {
+  flex: 1;
+}
+.chat-header {
+  margin-bottom: 48px;
+}
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .app-container {
+    flex-direction: row;
+  }
+
+  .chat-section {
+    width: 50%;
+    padding: 40px;
+  }
+
+  .chat-title {
+    font-size: 42px;
+  }
+
+  .signup-section {
+    width: 50%;
+    padding: 40px;
+  }
+}
 
 /* Box-sizing for predictable layouts */
 *, *::before, *::after {

@@ -1,0 +1,156 @@
+.chat-interface {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: white;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .user-message {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .user-message p {
+    font-size: 14px;
+  }
+  
+  .ai-response-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    width: fit-content;
+  }
+  
+  .help-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .ai-message {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .message-text {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  
+  .steps-list {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 14px;
+  }
+  
+  .highlight-text {
+    color: rgb(173, 216, 255);
+  }
+  
+  .reaction-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .reaction-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .reaction-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .reaction-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .message-input-container {
+    position: relative;
+  }
+  
+  .message-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 80px 10px 12px;
+    font-size: 14px;
+  }
+  
+  .message-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .message-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  .input-actions {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 4px;
+  }
+  
+  .input-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+  
+  .input-action-button:hover {
+    color: white;
+  }
+  
+  .input-action-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  

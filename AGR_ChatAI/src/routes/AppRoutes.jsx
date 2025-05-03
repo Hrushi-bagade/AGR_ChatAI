@@ -3,12 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import HomePage from '../pages/HomePage';
 import DashboardPage from '../pages/DashboardPage';
-import LoginPage from '../pages/LoginPage';
+
 
 const AppRoutes = () => (
   <Routes>
     {/* Routes without layout */}
-    <Route path="/login" element={<LoginPage />} />
+    <Route path="/login" element={<Sig />} />
 
     {/* Routes with MainLayout wrapper */}
     <Route element={<MainLayout />}>
