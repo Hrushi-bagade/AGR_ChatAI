@@ -1,13 +1,12 @@
 import { ChatInterface } from "../components/ChatInterface"
 import { SignUpForm } from "./LoginPage"
 
-function App() {
+function SignIn() {
 
   return (
     <>
     <h1>Welcome</h1>
      <main className="app-container">
-      /* Left side - Chat interface with gradient background *S/
       <div className="chat-section">
         <header className="chat-header">
           <h2 className="brand-name">CHAT A.I+</h2>
@@ -37,4 +36,4 @@ function App() {
   )
 }
 
-export default App
+export default SignIn
