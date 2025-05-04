@@ -4,10 +4,6 @@ import MainLayout from '../layouts/MainLayout';
 import HomePage from '../pages/HomePage';
 import DashboardPage from '../pages/DashboardPage';
 import SignIn from '../pages/SignIn';
-<<<<<<< HEAD
-
-=======
->>>>>>> 04bff64 (changes)
 
 
 const AppRoutes = () => (

@@ -1,10 +1,6 @@
 import { ChatInterface } from "../components/ChatInterface"
 import { SignUpForm } from "./LoginPage"
-<<<<<<< HEAD
-
-=======
 import '../App.css'
->>>>>>> 04bff64 (changes)
 function SignIn() {
 
   return (
