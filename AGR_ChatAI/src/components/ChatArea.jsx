@@ -40,15 +40,15 @@ These are just the basic steps to get started with a GPT chatbot in Python. Depe
 
   return (
     <div className="content">
-      {/* <div className="chat-header"> */}
-        {/* <div className="chat-title">
+      {/* <div className="chat-header"> 
+         <div className="chat-title">
           <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User avatar" />
           <h2>Create a chatbot gpt using python language what will be step for that</h2>
-        </div> */}
-        {/* <div className="chat-actions"> */}
-          {/* <Edit2 size={18} /> */}
-        {/* </div> */}
-      {/* </div> */}
+        </div>
+        <div className="chat-actions">
+          <Edit2 size={18} />
+        </div>
+      </div> */}
 
       <div className="chat-messages">
         {chatData.map((message) => (
@@ -58,13 +58,16 @@ These are just the basic steps to get started with a GPT chatbot in Python. Depe
               <div className="message-header">
                 <img className="avatar" src={message.avatar || "/placeholder.svg"} alt="User avatar" />
                 <div className="message-content">{message.content}</div>
+                <div className="chat-actions">
+          <Edit2 size={18} />
+        </div>
               </div>
             ) : (
               // AI message
               <>
                 <div className="message-header">
-                  <img className="avatar" src="/ai-avatar.png" alt="AI avatar" />
-                  <div className="chat-label">
+                  {/* <img className="avatar" src="/ai-avatar.png" alt="AI avatar" /> */}
+                  <div className="chat-label" style={{fontStyle:"italic"}}>
                     CHAT A.I+
                     <Info size={12} />
                   </div>
@@ -72,18 +75,35 @@ These are just the basic steps to get started with a GPT chatbot in Python. Depe
                 <div className="message-content">
                   {message.content.split("\n\n").map((paragraph, idx) => {
                     // Check if this is a numbered list
-                    if (paragraph.match(/^\d\./)) {
-                      const listItems = paragraph.split("\n").filter((item) => item.trim())
-                      return (
-                        <ol key={idx} start={Number.parseInt(listItems[0])}>
-                          {listItems.map((item, itemIdx) => {
-                            const content = item.replace(/^\d\./, "").trim()
-                            return <li key={itemIdx}>{content}</li>
-                          })}
-                        </ol>
-                      )
+                    {
+                      /* inside the message.content.split(...) map, in the “numbered list” branch */
+                      if (paragraph.match(/^\d\./)) {
+                        const listItems = paragraph
+                          .split('\n')             // split into lines
+                          .filter((item) => item.trim());
+                    
+                        return (
+                          <ol key={idx} start={Number.parseInt(listItems[0], 10)}>
+                            {listItems.map((item, itemIdx) => {
+                              // remove leading “N.” and trim
+                              const text = item.replace(/^\d\.\s*/, '').trim();
+                              // split label from rest at the first colon
+                              const [label, ...rest] = text.split(':');
+                              const remainder = rest.join(':'); // join back anything after the colon
+                    
+                              return (
+                                <li key={itemIdx}>
+                                  <strong>{label}:</strong>
+                                  {remainder && ' '}{remainder}
+                                </li>
+                              );
+                            })}
+                          </ol>
+                        );
+                      }
                     }
-                    return <p key={idx}>{paragraph}</p>
+                    
+                    return <p style={{fontWeight:"bold"}} key={idx}>{paragraph}</p>
                   })}
                 </div>
                 <div className="message-actions">
@@ -116,11 +136,11 @@ These are just the basic steps to get started with a GPT chatbot in Python. Depe
           <Send size={16} />
         </button>
       </div>
-
+{/* 
       <div className="help-button">
         <div className="help-text">Upgrade to Pro</div>
         <HelpCircle className="help-icon" size={16} />
-      </div>
+      </div> */}
     </div>
   )
 }

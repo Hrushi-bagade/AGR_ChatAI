@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "../styles/ChatInterface.css"
-
+import "../App.css"
 export function ChatInterface() {
   const [message, setMessage] = useState("")
 

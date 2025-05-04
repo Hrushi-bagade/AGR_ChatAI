@@ -7,7 +7,6 @@ export function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
-    
     <div className="signup-form-container">
       <div className="signup-header">
         <h1 className="signup-title">Sign up with free trial</h1>

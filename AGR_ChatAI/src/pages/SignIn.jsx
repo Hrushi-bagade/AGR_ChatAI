@@ -1,11 +1,14 @@
 import { ChatInterface } from "../components/ChatInterface"
 import { SignUpForm } from "./LoginPage"
+<<<<<<< HEAD
 
+=======
+import '../App.css'
+>>>>>>> 04bff64 (changes)
 function SignIn() {
 
   return (
     <>
-    <h1>Welcome</h1>
      <main className="app-container">
       <div className="chat-section">
         <header className="chat-header">
