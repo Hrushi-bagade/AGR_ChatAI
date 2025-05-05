@@ -1,11 +1,17 @@
 import { useState } from "react"
 import "../styles/SignUpForm.css"
+import { useNavigate } from "react-router-dom"
 
 export function SignUpForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
-
+  const navigate = useNavigate() // ← here
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // You can add validation or API calls here if needed
+    navigate("/Chat") // ← change "/dashboard" to your desired route
+  }
   return (
     <div className="signup-form-container">
       <div className="signup-header">
@@ -13,7 +19,7 @@ export function SignUpForm() {
         <p className="signup-subtitle">Empower your experience, sign up for a free account today</p>
       </div>
 
-      <form className="signup-form">
+      <form className="signup-form"  onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email" className="form-label">
             Email Address<span className="required">*</span>

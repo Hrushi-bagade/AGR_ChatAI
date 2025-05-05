@@ -79,6 +79,7 @@
 import { useState } from "react"
 import '../styles/Sidebar.css';
 import { MessageSquare, Plus, Search, Settings, Trash2, Edit2, Circle } from "react-feather"
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [activeChat, setActiveChat] = useState("Create Chatbot GPT...")
@@ -95,13 +96,18 @@ const Sidebar = () => {
   ]
 
   const olderConversations = ["Crypto Lending App Name", "Operator Grammar Types", "Min States For Binary DFA"]
-
+  const navigate = useNavigate() // ← here
+  const handleNewChat=(e)=>{
+      e.preventDefault()
+      navigate("/ChatHome") // ← change "/dashboard" to your desired route
+ 
+  }
   return (
     <div className="sidebar">
       <div className="sidebar-header">
         <h1>CHAT A.I+</h1>
         <div className="header-actions">
-          <button className="new-chat-btn">
+          <button className="new-chat-btn" onClick={handleNewChat}>
             <Plus size={16} />
             <span>New chat</span>
           </button>

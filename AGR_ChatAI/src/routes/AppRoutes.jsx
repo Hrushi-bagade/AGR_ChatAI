@@ -10,13 +10,13 @@ import StartChat from '../pages/StartChat';
 const AppRoutes = () => (
   <Routes>
     {/* Routes without layout */}
-    <Route path="/login" element={<SignIn />} />
+    <Route path="/" element={<SignIn />} />
 
     {/* Routes with MainLayout wrapper */}
     <Route element={<MainLayout />}>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/StartChat" element={<StartChat />} />
+      {/* <Route path="/" element={<HomePage />} /> */}
+      <Route path="/Chat" element={<DashboardPage />} />
+      <Route path="/ChatHome" element={<StartChat />} />
 
       {/* catch-all */}
       <Route path="*" element={<Navigate to="/" replace />} />

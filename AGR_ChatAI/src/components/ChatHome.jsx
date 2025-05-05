@@ -1,85 +1,136 @@
-import React from "react";
-import "../styles/ChatHome.css";
-
-const ChatHome = () => {
+import { Globe, Zap, AlertTriangle } from "react-feather"
+import "../styles/ChatHome.css"
+const ChatContent = () => {
   return (
-    <div>
-      <div className="header">
-        <div className="logo-pill">
-          <span>CHAT A.I+</span>
-        </div>
+    <div className="chat-content">
+      <div className="chat-header">
+        <div className="chat-title">CHAT A.I+</div>
       </div>
 
-      <div className="greeting">
+      <div className="greeting-message">
         <h1>Good day! How may I assist you today?</h1>
       </div>
-  {
 
-  
-    <div>
-     <div className="left-panel">
-          <div className="feature-card dark">
-            <div className="icon globe">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
+      <div className="capabilities-container">
+        {/* Explore Row */}
+        <div className="capability-row" itemID="HHr">
+          <div className="capability-card dark">
+            <div className="card-icon">
+              <Globe size={24} />
             </div>
-            <div className="feature-title">Explore</div>
-            <div className="feature-description">Learn how to use chat.ai platform for your needs</div>
+            <div className="card-title">Explore</div>
+            <div className="card-description">Learn how to use helpful platform for your needs</div>
           </div>
 
-          <div className="feature-card dark">
-            <div className="icon lightning">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-              </svg>
+          <div className="divider"></div>
+
+          <div className="capability-card light">
+            <div className="card-content">
+              <div className="card-avatar purple">
+                <div className="avatar-inner"></div>
+              </div>
+              <div className="card-info">
+                <div className="card-title">"Explain"</div>
+                <div className="card-description">Quantum computing in simple terms</div>
+              </div>
             </div>
-            <div className="feature-title">Capabilities</div>
-            <div className="feature-description">How much capable chat.ai to full-fill your needs</div>
+            <div className="card-arrow">→</div>
           </div>
 
-          <div className="feature-card dark">
-            <div className="icon warning">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                <line x1="12" y1="9" x2="12" y2="13"></line>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
+          <div className="capability-card light">
+            <div className="card-content">
+              <div className="card-avatar blue">
+                <div className="avatar-inner"></div>
+              </div>
+              <div className="card-info">
+                <div className="card-title">"How to"</div>
+                <div className="card-description">Make a search engine platform like google</div>
+              </div>
             </div>
-            <div className="feature-title">Limitation</div>
-            <div className="feature-description">How much capable chat.ai to full-fill your needs</div>
+            <div className="card-arrow">→</div>
           </div>
         </div>
-    </div>
-}
-    </div>
-  );
-};
 
-export default ChatHome;
+        {/* Capabilities Row */}
+        <div className="capability-row">
+          <div className="capability-card dark">
+            <div className="card-icon">
+              <Zap size={24} />
+            </div>
+            <div className="card-title">Capabilities</div>
+            <div className="card-description">How much capable chatai to fulfill your needs</div>
+          </div>
+
+          <div className="divider"></div>
+
+          <div className="capability-card light">
+            <div className="card-content">
+              <div className="card-avatar orange">
+                <div className="avatar-inner"></div>
+              </div>
+              <div className="card-info">
+                <div className="card-title">"Remember"</div>
+                <div className="card-description">quantum computing in simple terms</div>
+              </div>
+            </div>
+            <div className="card-arrow">→</div>
+          </div>
+
+          <div className="capability-card light">
+            <div className="card-content">
+              <div className="card-avatar yellow">
+                <div className="avatar-inner"></div>
+              </div>
+              <div className="card-info">
+                <div className="card-title">"Allows"</div>
+                <div className="card-description">User to provide follow up corrections</div>
+              </div>
+            </div>
+            <div className="card-arrow">→</div>
+          </div>
+        </div>
+
+        {/* Limitation Row */}
+        <div className="capability-row">
+          <div className="capability-card dark">
+            <div className="card-icon">
+              <AlertTriangle size={24} />
+            </div>
+            <div className="card-title">Limitation</div>
+            <div className="card-description">How much capable chatai to fulfill your needs</div>
+          </div>
+
+          <div className="divider"></div>
+
+          <div className="capability-card light">
+            <div className="card-content">
+              <div className="card-avatar red">
+                <div className="avatar-inner"></div>
+              </div>
+              <div className="card-info">
+                <div className="card-title">"May"</div>
+                <div className="card-description">Occasionally generate incorrect information</div>
+              </div>
+            </div>
+            <div className="card-arrow">→</div>
+          </div>
+
+          <div className="capability-card light">
+            <div className="card-content">
+              <div className="card-avatar teal">
+                <div className="avatar-inner"></div>
+              </div>
+              <div className="card-info">
+                <div className="card-title">" Limited"</div>
+                <div className="card-description">Knowledge of world and events after 2021</div>
+              </div>
+            </div>
+            <div className="card-arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ChatContent
