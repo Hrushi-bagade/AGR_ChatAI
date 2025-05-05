@@ -1,5 +1,15 @@
-import { Edit2, Info, ThumbsUp, Copy, Share2, MoreVertical, RefreshCw, Send, HelpCircle } from "react-feather"
-import '../styles/ChatArea.css'
+import {
+  Edit2,
+  Info,
+  ThumbsUp,
+  Copy,
+  Share2,
+  MoreVertical,
+  RefreshCw,
+  Send,
+  HelpCircle,
+} from "react-feather";
+import "../styles/ChatArea.css";
 const ChatArea = () => {
   // Dummy chat data
   const chatData = [
@@ -7,7 +17,8 @@ const ChatArea = () => {
       id: 1,
       user: true,
       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      content: "Create a chatbot gpt using python language what will be step for that",
+      content:
+        "Create a chatbot gpt using python language what will be step for that",
     },
     {
       id: 2,
@@ -36,113 +47,124 @@ These are just the basic steps to get started with a GPT chatbot in Python. Depe
       content:
         "Chatbots can be used for a wide range of purposes, including:\n\nCustomer service chatbots can handle frequently asked questions, provide basic support, and help customers contact human agents when needed.",
     },
-  ]
+  ];
 
   return (
-    <div className="content">
-      {/* <div className="chat-header"> 
-         <div className="chat-title">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User avatar" />
-          <h2>Create a chatbot gpt using python language what will be step for that</h2>
-        </div>
-        <div className="chat-actions">
-          <Edit2 size={18} />
-        </div>
-      </div> */}
-
-      <div className="chat-messages">
-        {chatData.map((message) => (
-          <div key={message.id} className="message">
-            {message.user ? (
-              // User message
-              <div className="message-header">
-                <img className="avatar" src={message.avatar || "/placeholder.svg"} alt="User avatar" />
-                <div className="message-content">{message.content}</div>
-                <div className="chat-actions">
-          <Edit2 size={18} />
-        </div>
-              </div>
-            ) : (
-              // AI message
-              <>
-                <div className="message-header">
-                  {/* <img className="avatar" src="/ai-avatar.png" alt="AI avatar" /> */}
-                  <div className="chat-label" style={{fontStyle:"italic"}}>
-                    CHAT A.I+
-                    <Info size={12} />
+    <>
+      <div className="content">
+        <div className="chat-messages">
+          {chatData.map((message) => (
+            <div key={message.id} className="message">
+              {message.user ? (
+                // User message
+                <div style={{ display: "flex" }}>
+                  <div className="message-header">
+                    <img
+                      className="avatar"
+                      src={message.avatar || "/placeholder.svg"}
+                      alt="User avatar"
+                    />
+                    <div className="message-content">{message.content}</div>
+                  </div>
+                  <div className="chat-actions">
+                    <Edit2 size={18} />
                   </div>
                 </div>
-                <div className="message-content">
-                  {message.content.split("\n\n").map((paragraph, idx) => {
-                    // Check if this is a numbered list
-                    {
-                      /* inside the message.content.split(...) map, in the “numbered list” branch */
-                      if (paragraph.match(/^\d\./)) {
-                        const listItems = paragraph
-                          .split('\n')             // split into lines
-                          .filter((item) => item.trim());
-                    
-                        return (
-                          <ol key={idx} start={Number.parseInt(listItems[0], 10)}>
-                            {listItems.map((item, itemIdx) => {
-                              // remove leading “N.” and trim
-                              const text = item.replace(/^\d\.\s*/, '').trim();
-                              // split label from rest at the first colon
-                              const [label, ...rest] = text.split(':');
-                              const remainder = rest.join(':'); // join back anything after the colon
-                    
-                              return (
-                                <li key={itemIdx}>
-                                  <strong>{label}:</strong>
-                                  {remainder && ' '}{remainder}
-                                </li>
-                              );
-                            })}
-                          </ol>
-                        );
+              ) : (
+                // AI message
+                <div
+                  id="AIanswer"
+                  style={{ marginLeft: "30px", marginTop: "0%" }}
+                >
+                  <div className="message-header">
+                    {/* <img className="avatar" src="/ai-avatar.png" alt="AI avatar" /> */}
+                    <div className="chat-label" style={{ fontStyle: "italic" }}>
+                      CHAT A.I+
+                      <Info size={12} />
+                    </div>
+                  </div>
+                  <div className="message-content">
+                    {message.content.split("\n\n").map((paragraph, idx) => {
+                      // Check if this is a numbered list
+                      {
+                        /* inside the message.content.split(...) map, in the “numbered list” branch */
+                        if (paragraph.match(/^\d\./)) {
+                          const listItems = paragraph
+                            .split("\n") // split into lines
+                            .filter((item) => item.trim());
+
+                          return (
+                            <ol
+                              key={idx}
+                              start={Number.parseInt(listItems[0], 10)}
+                            >
+                              {listItems.map((item, itemIdx) => {
+                                // remove leading “N.” and trim
+                                const text = item
+                                  .replace(/^\d\.\s*/, "")
+                                  .trim();
+                                // split label from rest at the first colon
+                                const [label, ...rest] = text.split(":");
+                                const remainder = rest.join(":"); // join back anything after the colon
+
+                                return (
+                                  <li key={itemIdx}>
+                                    <strong>{label}:</strong>
+                                    {remainder && " "}
+                                    {remainder}
+                                  </li>
+                                );
+                              })}
+                            </ol>
+                          );
+                        }
                       }
-                    }
-                    
-                    return <p style={{fontWeight:"bold"}} key={idx}>{paragraph}</p>
-                  })}
-                </div>
-                <div className="message-actions">
-                  <button className="action-button">
-                    <ThumbsUp size={16} />
-                  </button>
-                  <button className="action-button">
-                    <Copy size={16} />
-                  </button>
-                  <button className="action-button">
-                    <Share2 size={16} />
-                  </button>
-                  <button className="action-button">
-                    <MoreVertical size={16} />
-                  </button>
-                  <button className="regenerate-button">
-                    <RefreshCw size={14} />
-                    Regenerate
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
 
-      <div className="chat-input-container">
-        <input type="text" className="chat-input" placeholder="What's in your mind..." />
-        <button className="send-button">
-          <Send size={16} />
-        </button>
+                      return (
+                        <p style={{ fontWeight: "bold" }} key={idx}>
+                          {paragraph}
+                        </p>
+                      );
+                    })}
+                  </div>
+                  <div className="message-actions">
+                    <button className="action-button">
+                      <ThumbsUp size={16} />
+                    </button>
+                    <button className="action-button">
+                      <Copy size={16} />
+                    </button>
+                    <button className="action-button">
+                      <Share2 size={16} />
+                    </button>
+                    <button className="action-button">
+                      <MoreVertical size={16} />
+                    </button>
+                    <button className="regenerate-button">
+                      <RefreshCw size={14} />
+                      Regenerate
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-{/* 
-      <div className="help-button">
-        <div className="help-text">Upgrade to Pro</div>
-        <HelpCircle className="help-icon" size={16} />
+      {/* <div style={{ width: "65%", margin: "auto" }}>
+        <div className="chat-input-container">
+          <input
+            type="text"
+            className="chat-input"
+            placeholder="What's in your mind..."
+          />
+          <button className="send-button">
+            <Send size={16} />
+          </button>
+        </div>
       </div> */}
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default ChatArea
+export default ChatArea;

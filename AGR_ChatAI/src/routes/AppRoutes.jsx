@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout';
 import HomePage from '../pages/HomePage';
 import DashboardPage from '../pages/DashboardPage';
 import SignIn from '../pages/SignIn';
+import StartChat from '../pages/StartChat';
 
 
 const AppRoutes = () => (
@@ -15,6 +16,8 @@ const AppRoutes = () => (
     <Route element={<MainLayout />}>
       <Route path="/" element={<HomePage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/StartChat" element={<StartChat />} />
+
       {/* catch-all */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Route>

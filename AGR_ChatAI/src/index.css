@@ -12,14 +12,15 @@ html, body, #root {
   color: var(--color-text);
 }
 
-.app-main {
-  flex: 1;                  /* Take up remaining space */ 
-  overflow-y: auto;         /* Scroll content if it overflows vertically */ 
-  margin-left: 20px;        /* Optional gutter between sidebar and main */
-  padding: 20px;
-  background-color: var(--color-bg);
-}
 
+.app-main {
+  flex: 1;
+  /* overflow: hidden; */
+  /* overflow-y: auto;    Scroll only content, if needed */
+  padding: 20px;
+  /* background-color: var(--color-bg); */
+  box-sizing: border-box;
+}
 .app-layout {
   display: flex;            /* Enable flex layout */
   height: 100vh;            /* Full viewport height */
@@ -27,30 +28,61 @@ html, body, #root {
   box-sizing: border-box;   /* Include padding in height calculations */
 }
 
-/* 4. Upgrade tab */
 .upgrade-tab {
   position: fixed;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
   
+  width: 60px;
+  height: 200px;
+
   background-color: #6366f1;
   color: #fff;
-  padding: 10px 16px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   box-shadow: -2px 2px 8px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
-  /* Vertical text */
   writing-mode: vertical-rl;
-  /* text-orientation: upright; */
+  text-align: center;
+
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+
+  font-family: 'Inter', sans-serif;
+  z-index: 1000;
 }
+
 .upgrade-tab:hover {
   background-color: #4f46e5;
   transition: background-color 0.2s ease-in-out;
 }
+
+.upgrade-icon {
+  font-size: 1.2rem;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .upgrade-tab {
+    width: 120px;
+    height: 40px;
+  }
+
+  .upgrade-text {
+    font-size: 6px;
+  }
+
+  .upgrade-icon {
+    font-size: 14px;
+  }
+}
+
 
 /* Box-sizing for predictable layouts */
 *, *::before, *::after {

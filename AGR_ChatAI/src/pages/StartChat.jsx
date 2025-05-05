@@ -2,11 +2,15 @@ import React from 'react'
 import ChatArea from '../components/ChatArea'
 import '../styles/ChatArea.css'
 import {  Send } from "react-feather"
+import ChatAIInterface from '../components/ChatAIIntro'
+import ChatHome from '../components/ChatHome'
 
-const DashboardPage = () => {
+const StartChat = () => {
   return (
     <div>
-      <ChatArea/>
+      {/* <ChatAIInterface/> */}
+      <ChatHome/>
+
       <div style={{width:"65%",margin:"auto"}}>
       <div className="chat-input-container">
         <input type="text" className="chat-input" placeholder="What's in your mind..." />
@@ -19,4 +23,4 @@ const DashboardPage = () => {
   )
 }
 
-export default DashboardPage
+export default StartChat
