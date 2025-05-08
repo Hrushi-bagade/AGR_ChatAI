@@ -11,12 +11,15 @@ function SignIn() {
           <h2 className="brand-name">CHAT A.I+</h2>
         </header>
 
-        <div className="chat-content">
-          <div className="chat-title-container">
-            <h1 className="chat-title">
-              Learn, Discover &<br />
+        <div className="chat-content1">
+          <div className="chat-title-container1">
+            <h1 className="chat-title1">
+              Learn, Discover & </h1>
+              <br />
+              <h1 className="chat-title2">
               Automate in One Place.
-            </h1>
+              </h1>
+            
           </div>
 
           <div className="chat-interface-container">

@@ -3,7 +3,6 @@ import "../styles/ChatInterface.css"
 import "../App.css"
 export function ChatInterface() {
   const [message, setMessage] = useState("")
-
   return (
     <div className="chat-interface">
       <div className="chat-messages">

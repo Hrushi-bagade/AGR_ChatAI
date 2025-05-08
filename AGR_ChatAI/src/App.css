@@ -35,17 +35,24 @@
     letter-spacing: 1px;
   }
   
-  .chat-content {
+  .chat-content1 {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
   
-  .chat-title-container {
+  .chat-title-container1 {
     margin-bottom: 32px;
   }
   
-  .chat-title {
+  .chat-title1 {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    /* text-align: center; */
+    line-height: 1.2;
+  }
+  .chat-title2 {
     color: white;
     font-size: 36px;
     font-weight: bold;

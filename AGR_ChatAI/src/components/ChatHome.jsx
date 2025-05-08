@@ -3,11 +3,20 @@ import "../styles/ChatHome.css"
 const ChatContent = () => {
   return (
     <div className="chat-content">
-      <div className="chat-header">
+      {/* <div className="chat-header">
         <div className="chat-title">CHAT A.I+</div>
       </div>
 
       <div className="greeting-message">
+        <h1>Good day! How may I assist you today?</h1>
+      </div> */}
+            <div className="header">
+        <div className="logo-pill">
+          <span>CHAT A.I+</span>
+        </div>
+      </div>
+
+      <div className="greeting">
         <h1>Good day! How may I assist you today?</h1>
       </div>
 
